@@ -95,7 +95,37 @@ class todo extends Component {
                         <div className="header__missionCounter">1</div>
                     </div>
                     <div className="main">
-                        <div className="mission"></div>
+                        <div className="mission">
+                            <div className="mission__title">Title</div>
+                            <div className="mission__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisi quam, lacinia pulvinar egestas nec, aliquam in est. Ut in fringilla dui.</div>
+                            <div className="mission__edit">
+                                <div className="mission__edit_icons"> 1 2</div>
+                                <div className="mission__status"> 3</div>
+                            </div>
+                        </div>
+
+                        <div className="mission">
+                            <div className="mission__title">Title</div>
+                            <div className="mission__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisi quam, lacinia pulvinar egestas nec, aliquam in est. Ut in fringilla dui.</div>
+                            <div className="mission__edit">
+                                <div className="mission__edit_icons"> 1 2</div>
+                                <div className="mission__status"> 3</div>
+                            </div>
+                        </div>
+
+                        <div className="mission">
+                            <div className="mission__title">Title</div>
+                            <div className="mission__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisi quam, lacinia pulvinar egestas nec, aliquam in est. Ut in fringilla dui.</div>
+                            <div className="mission__edit">
+                                <div className="mission__edit_icons"> 1 2</div>
+                                <div className="mission__status"> 3</div>
+                            </div>
+                        </div>
+                        
+                        
                     </div>
                     <div className="footer">
                         <img src={mainButton} alt=""/>
