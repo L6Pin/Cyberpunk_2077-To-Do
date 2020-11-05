@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.toDoContainer {
+  padding: 8.43rem 2.5rem 1.56rem 2.5rem;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(-31%);
+}
+
+.toDo {
+  height: 100%;
+  position: relative;
+}
+
+.toDo::before {
+  content: "";
+  position: absolute;
+  top: -20vw;
+  left: 0;
+  height: 15%;
+  width: 100%;
+  background-image: url(../img/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.toDo .header {
+  height: 20%;
+  background: gray;
+  padding: .56rem .93rem 1.25rem .93rem;
+  border-top-left-radius: 42px;
+  border-top-right-radius: 42px;
+}
+
+.toDo .header__title {
+  -webkit-text-stroke: .15vw  #5FACBC;
+  -webkit-text-fill-color: #FCEE0A;
+  text-align: center;
+  font-size: 5vw;
+}
+
+.toDo .header__dateTime {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toDo .main {
+  height: 70%;
+  background: green;
+  overflow-y: auto;
+}
+
+.toDo .footer {
+  height: 10%;
+  background: black;
+  border-bottom-right-radius: 42px;
+  text-align: right;
+}
+/*# sourceMappingURL=style.css.map */
