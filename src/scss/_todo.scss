@@ -1,10 +1,13 @@
 .toDoContainer{
     padding: 8.43rem 2.5rem 1.56rem 2.5rem;
     height: 100vh;
+    width: 100%;
     position: relative;
     overflow: hidden;
-
+    
 }
+
+
 
 video{
     position: absolute;
@@ -15,6 +18,89 @@ video{
 }
 
 .toDo{
+
+    border: 3px solid #5FACBC;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 42px;
+
+
+    & .createNewMissionContainer{
+        position: absolute;
+        top: 55%;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        transform: translateY(-50%);
+        background: rgba($color: #000000, $alpha: 0.6);
+        z-index: 3;
+        padding: 2rem 1rem 0 1rem;
+        display: none;
+        
+            & .createNewMission{
+                width: 100%;
+                height: 16.3rem;
+                background-color: rebeccapurple;
+                border-radius: 20px;
+                padding: 2.5rem .5rem .5rem .5rem;
+                position: relative;
+
+
+                & input{
+                    background: none;
+                    border: none;
+                    border-bottom: 2px solid blue;
+                    width: 100%;
+                    margin-bottom: 1rem;
+
+                    &:focus{
+                        outline: none;
+                    }
+                }
+
+                & textarea{
+                    width: 100%;
+                    background: #202020;
+                    color: red;
+                    overflow-y: auto;
+                    border-style: none; 
+                    border-color: Transparent; 
+                    height: 84%;
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    padding: .6rem;
+
+                    &:focus{
+                        outline: none;
+                    }
+                }
+
+                #addBtn{
+                   position: absolute;
+                    bottom: 5%;
+                    right: 5%;
+                    width: 15%;
+                }
+
+                // .addBtnContainer{
+                //     background: #202020;
+                //     display: flex;
+                //     justify-content: flex-end;
+                //     align-items: center;
+                //     border-bottom-left-radius: 20px;
+                //     border-bottom-right-radius: 20px;
+                //     padding-top: 1rem;
+                //     transform: translateY(-1rem);
+                //     & #addBtn{
+                //         width: 40px;
+                //     }
+                // }
+            }
+    }
+
+    .createNewMissionOpen{
+        display: block;
+    }
 
     height: 100%;
     position: relative;   
@@ -37,6 +123,7 @@ video{
         padding: .56rem .93rem 1.25rem .93rem;
         border-top-left-radius: 42px;
         border-top-right-radius: 42px;
+        // border: 1px solid blue;
 
         &__title{
             -webkit-text-stroke: .15vw  #5FACBC;
@@ -55,13 +142,17 @@ video{
         height: 70%;
         background: green;
         overflow-y:auto;
-
+      
         & .mission{
             margin: 0.81rem 0.81rem 0.625rem 0.81rem;
             padding: 1.375rem;
             border: 1px black solid;
             border-radius: 10px;
         }
+    }
+
+    .mainOpen{
+        filter: blur(2px);
     }
 
     & .footer{
