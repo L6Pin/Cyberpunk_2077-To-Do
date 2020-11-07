@@ -1,6 +1,7 @@
 import React, { Component, useEffect } from 'react';
 import videoBg from "../img/videoBg.mp4";
 import mainButton from '../img/mainBtn.png';
+import logo from '../img/logo.png'
 
 
 class todo extends Component {
@@ -14,6 +15,7 @@ class todo extends Component {
     }
 
     componentDidMount(){
+
         
         //   Code for adding time in the header 
         //----------------------------------------
@@ -122,13 +124,22 @@ class todo extends Component {
         setInterval(appTime, 1000);
        //---------------------------------------------
 
+       
+      
 
-       if (JSON.stringify(localStorage.getItem('msn')).length > 4)
+       if (localStorage.getItem('msn'))
        {
          this.setState({
            missions: JSON.parse(localStorage.getItem('msn'))
          })
        }
+
+    //    if (JSON.stringify(localStorage.getItem('msn')).length > 4)
+    //    {
+    //      this.setState({
+    //        missions: JSON.parse(localStorage.getItem('msn'))
+    //      })
+    //    }
  
     
     }
@@ -177,16 +188,20 @@ class todo extends Component {
                 <div className="toDo">
                 <div className={this.state.newMissionOpened ? "createNewMissionContainer createNewMissionOpen" : "createNewMissionContainer"}>
                     <div className="createNewMission">
-                        <input type="text" id="missionTitle"/>
-                        <textarea name="" id="missionText" cols="30" rows="10"></textarea>
+                        <div><input type="text" id="missionTitle"/></div>
+                        <div><textarea name="" id="missionText" cols="30" rows="10"></textarea></div>
                         <img src={mainButton} id="addBtn" onClick={addNewMission} alt=""/>
                     </div>
                 </div>
                     <div className="header">
+                        <img src={logo} alt=""/>
+                        
+                        <div className="header__border">
                         <div className="header__title">TASK TRACKER</div>
                         <div className="header__dateTime"><p id="day"></p><p id="time"></p></div>
                         <div className="header__dateTime"><p id="date"></p><p>Night City</p></div>
                         <div className="header__missionCounter">1</div>
+                        </div>
                     </div>
                     <div className={this.state.newMissionOpened ? "main mainOpen" : "main"}>
                         {

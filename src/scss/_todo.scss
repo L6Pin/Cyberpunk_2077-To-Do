@@ -1,10 +1,10 @@
+
 .toDoContainer{
-    padding: 8.43rem 2.5rem 1.56rem 2.5rem;
+    padding: 3rem 1rem 1rem 1rem;
     height: 100vh;
     width: 100%;
     position: relative;
     overflow: hidden;
-    
 }
 
 
@@ -18,12 +18,11 @@ video{
 }
 
 .toDo{
+    color: red;
 
-    border: 3px solid #5FACBC;
-    border-top-left-radius: 45px;
-    border-top-right-radius: 45px;
     border-bottom-right-radius: 42px;
-
+    display: flex;
+    flex-direction: column;
 
     & .createNewMissionContainer{
         position: absolute;
@@ -68,7 +67,7 @@ video{
                     height: 84%;
                     border-bottom-left-radius: 20px;
                     border-bottom-right-radius: 20px;
-                    padding: .6rem;
+                    padding: .6rem .6rem 1rem .6rem;
 
                     &:focus{
                         outline: none;
@@ -105,48 +104,57 @@ video{
     height: 100%;
     position: relative;   
 
-    &::before{
-        content: "";
-        position: absolute;
-        top: -20vw;
-        left: 0;
-        height: 15%;
-        width: 100%;
-        background-image: url(../img/logo.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-
     & .header{
-        height: 20%;
-        background: gray;
-        padding: .56rem .93rem 1.25rem .93rem;
-        border-top-left-radius: 42px;
-        border-top-right-radius: 42px;
-        // border: 1px solid blue;
+        height: auto;
+        padding: .56rem 0rem 0 0rem;
+        flex: 1;
+
+        & img{
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        &__border{
+            border-top: 3px solid #5FACBC;
+            border-left: 3px solid #5FACBC;
+            border-right: 3px solid #5FACBC;
+            background: rgba($color: #000000, $alpha: 0.7);
+            border-top-left-radius: 45px;
+            border-top-right-radius: 45px;
+            padding: .5rem  0;
+        }
 
         &__title{
             -webkit-text-stroke: .15vw  #5FACBC;
             -webkit-text-fill-color:  #FCEE0A;
             text-align: center;
-            font-size: 5vw;
+    
+            margin-bottom: 1rem;
         }
 
         &__dateTime{
             display: flex;
             justify-content: space-between;
+            padding: 0 .93rem;   
+        }
+
+        &__missionCounter{
+            padding: 0 .93rem;   
         }
     }
 
     & .main {
-        height: 70%;
-        background: green;
+        flex: 7;
         overflow-y:auto;
+        border-left: 3px solid #5FACBC;
+        border-right: 3px solid #5FACBC;
+        background: rgba($color: #000000, $alpha: 0.7);
       
         & .mission{
             margin: 0.81rem 0.81rem 0.625rem 0.81rem;
             padding: 1.375rem;
-            border: 1px black solid;
+            border: 1px red solid;
             border-radius: 10px;
         }
     }
@@ -156,10 +164,19 @@ video{
     }
 
     & .footer{
-        height: 10%;
-        background: black;
-        border-bottom-right-radius: 42px;
-        text-align: right;
+        border-bottom-right-radius: 39px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 1;
+        border-bottom: 3px solid #5FACBC;
+        border-left: 3px solid #5FACBC;
+        border-right: 3px solid #5FACBC;
+        background: rgba($color: #000000, $alpha: 0.7);
+
+        & #mainBtn{
+            padding-right: .5rem;
+        }
     }
 
 }
