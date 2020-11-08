@@ -136,9 +136,9 @@ class todo extends Component {
 
 
 
-    //     let NewMissionWindow = () => {
-    //         this.setState({newMissionOpened: !this.state.newMissionOpened})
-    //     }
+        let NewMissionWindow = () => {
+            this.setState({newMissionOpened: !this.state.newMissionOpened})
+        }
 
         let addNewMission = () => {
 
@@ -165,13 +165,23 @@ class todo extends Component {
 
 
         return ( 
+            
             <div className="appContainer">
+
+                {/* Background video */}
+                    <video autoPlay muted loop>
+                         <source src={videoBg} type="video/mp4" />
+                    </video>
+
                     <div className="toDo">
 
+            
                         {/* ----- HEADER -----*/}
 
                         <div className="header">
-                            <div className="header__title">123</div>
+                            <img src={logo} alt=""/>
+                        <div className="header__border">
+                        <p className="header__title">TASK TRACKER</p>
                             <div className="header__tdContainer">
                                 <p className="day"></p> <p className="time"></p>
                             </div>
@@ -180,12 +190,18 @@ class todo extends Component {
                             </div>
                             <div className="missionNumber">1</div>
                         </div>
+                        </div>
                        
 
                         {/* ------ CARDS SECTION ------ */}
-                        <input type="text" name="" id="missionTitle"/>
-                        <input type="text" name="" id="missionText"/>
+                      
                         <div className="main">
+
+                        <div className={this.state.newMissionOpened === false ? "newMissionWindowClosed newMissionWindow": "newMissionWindow"}>
+                                <input type="text" name="" id="missionTitle"/>
+                                <input type="text" name="" id="missionText"/>
+                        </div>
+                        
                         {
                             this.state.missions.map(item => (
                                 <div className="mission">
@@ -203,6 +219,7 @@ class todo extends Component {
 
                         {/* ----- FOOTER -----*/}
                         <div className="footer">
+                            <p onClick={NewMissionWindow}>Open</p>
                             <p onClick={addNewMission}>Add</p>
                         </div>
 

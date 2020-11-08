@@ -2,9 +2,26 @@
 .appContainer{
     height: 100vh;
     width: 100%;
-    // background: red;
     padding: 1.5rem 1rem;
+   position: relative;
+   overflow: hidden;
+   font-family: 'Abel', sans-serif;
 }
+
+
+
+
+video{
+    position: absolute;
+    top: 0;
+    right: -135%;
+    height: 100%;
+    
+
+}
+
+
+
 
 .toDo{
     background: gray;
@@ -13,35 +30,91 @@
     flex-direction: column;
 }
 
+
+
+
+
+
 .header{
     
-    background: rebeccapurple;
-    flex: 1.2;
+    height: auto;
+    position: relative;
+    z-index: 3;
+
+    & img {
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        transform: translateY(5px);
+    }
+
+    &__border{
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        border: $blue 3px solid;
+        border-bottom: none;
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        padding: .2rem .7rem .5rem .7rem;
+        color: $red;        
+    }
+
+    &__title{
+        text-align: center;
+        color: $yellow;
+        -webkit-text-stroke: .5px $blue;
+        letter-spacing: .4rem;
+        text-shadow: 0px 0px 8px #F3CD5A;
+    }
 
     &__tdContainer{
         display: flex;
         justify-content: space-between;
+        font-size: 1.2rem;
+        text-shadow: 0px 0px 8px #FF3422;
     }
 
 }
 
-.main{
-    background: yellow;
-    flex: 7;
 
-    & .mission{
-  
-        background: green;
+
+.main{
+    // background: yellow;
+    position: relative;
+    flex: 7;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    border-left: $blue 3px solid;
+    border-right: $blue 3px solid;
+
+
+    & .newMissionWindow{
+        position: absolute;
+        width: 100%;
+        height: 5rem;
+        background-color: rebeccapurple;
+        bottom: 0;
+        left: 0;
+        z-index: 3  ;
+        transition: .3s ease-in-out;
+    }
+
+    & .newMissionWindowClosed{
+        transform: translateX(-100%);
+    }
+   
 
         & p {
             
             word-wrap: break-word;
         }
-    }
 }
+
 
 
 .footer{
     background: orange;
+    position: relative;
+    z-index: 5;
     flex: .7;
 }
