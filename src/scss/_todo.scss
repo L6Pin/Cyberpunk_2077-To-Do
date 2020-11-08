@@ -28,6 +28,7 @@ video{
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 
@@ -77,37 +78,60 @@ video{
 
 
 
+
 .main{
     // background: yellow;
     position: relative;
     flex: 7;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     overflow-y: auto;
     background-color: rgba($color: #000000, $alpha: 0.7);
     border-left: $blue 3px solid;
     border-right: $blue 3px solid;
+    color: $red;
+    padding: 2rem  1.5rem 1.5rem 1.5rem;
 
-
-    & .newMissionWindow{
-        position: absolute;
-        width: 100%;
-        height: 5rem;
-        background-color: rebeccapurple;
-        bottom: 0;
-        left: 0;
-        z-index: 3  ;
-        transition: .3s ease-in-out;
-    }
-
-    & .newMissionWindowClosed{
-        transform: translateX(-100%);
-    }
+ 
    
+    & .mission{
+        width: 100%;
+        margin-bottom: 3rem;
+        padding: 1rem;
+        border: $blue 3px solid;
+        border-top: none;
+        position: relative;
+        
+        
+            &::before{
+                content: '';
+                position: absolute;
+                // width: 106.91%;
+                // height: 20%;
+                // top: -19%;
+                // left: -1%;
+                width: 108.5%;
+                height: 14px;
+                top: -14px;
+                left: -3px;
+                background: url(../img/topMissionBorder.png) repeat-x 100% 0;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                @media (max-width: 360px){
+                    left: -4px;
+                }
+            }
+        
 
         & p {
             
             word-wrap: break-word;
         }
+    }
+}
+
+.mainNoScroll{
+    overflow-y: hidden ;
 }
 
 
@@ -117,4 +141,20 @@ video{
     position: relative;
     z-index: 5;
     flex: .7;
+
+    & .newMissionWindow{
+        position: absolute;
+        width: 100%;
+        height: 5rem;
+        background-color: rebeccapurple;
+        bottom: 100%;
+        left: 0%;
+        z-index: 3 ;
+        transition: .3s ease-in-out;
+       
+    }
+
+    & .newMissionWindowClosed{
+        transform: translateX(-100%);
+    }
 }

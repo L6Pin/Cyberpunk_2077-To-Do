@@ -197,10 +197,7 @@ class todo extends Component {
                       
                         <div className="main">
 
-                        <div className={this.state.newMissionOpened === false ? "newMissionWindowClosed newMissionWindow": "newMissionWindow"}>
-                                <input type="text" name="" id="missionTitle"/>
-                                <input type="text" name="" id="missionText"/>
-                        </div>
+              
                         
                         {
                             this.state.missions.map(item => (
@@ -219,6 +216,11 @@ class todo extends Component {
 
                         {/* ----- FOOTER -----*/}
                         <div className="footer">
+                        <div className={this.state.newMissionOpened === false ? "newMissionWindowClosed newMissionWindow": "newMissionWindow"}>
+                                <input type="text" name="" id="missionTitle"/>
+                                <input type="text" name="" id="missionText"/>
+                        </div>
+
                             <p onClick={NewMissionWindow}>Open</p>
                             <p onClick={addNewMission}>Add</p>
                         </div>
