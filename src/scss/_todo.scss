@@ -100,7 +100,9 @@ video{
         border: $blue 3px solid;
         border-top: none;
         position: relative;
-        
+        animation: .5s newMission forwards;
+        transform: translateY(-50%);
+        opacity: 0;
         
             &::before{
                 content: '';
@@ -156,5 +158,18 @@ video{
 
     & .newMissionWindowClosed{
         transform: translateX(-100%);
+    }
+}
+
+
+@keyframes newMission{
+    0%{
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
     }
 }
