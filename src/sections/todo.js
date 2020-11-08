@@ -189,8 +189,8 @@ class todo extends Component {
                         {
                             this.state.missions.map(item => (
                                 <div className="mission">
-                                <div className="mission__title" id="mTitle">{item.title}</div>
-                                <div className="mission__text" id="mText">{item.text}</div>
+                                <p className="mission__title" id="mTitle">{item.title}</p>
+                                <p className="mission__text" id="mText">{item.text}</p>
                                 <div className="mission__edit">
                                     <div className="mission__edit_icons"> 1 2</div>
                                     <div className="mission__status"> 3</div>

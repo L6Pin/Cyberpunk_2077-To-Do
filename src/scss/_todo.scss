@@ -28,6 +28,16 @@
 .main{
     background: yellow;
     flex: 7;
+
+    & .mission{
+  
+        background: green;
+
+        & p {
+            
+            word-wrap: break-word;
+        }
+    }
 }
 
 
