@@ -16,8 +16,14 @@
 video {
   position: absolute;
   top: 0;
-  right: -135%;
+  right: -75%;
   height: 100%;
+}
+
+@media (min-height: 480px) {
+  video {
+    right: -135%;
+  }
 }
 
 .toDo {

@@ -180,7 +180,7 @@ class todo extends Component {
             
                         {/* ----- HEADER -----*/}
 
-                        <div className="header">
+                        <div className={this.state.newMissionOpened === false ? 'header' : 'header mainInactive'}>
                             <img src={logo} alt=""/>
                         <div className="header__border">
                         <p className="header__title">TASK TRACKER</p>
