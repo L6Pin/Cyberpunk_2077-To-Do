@@ -223,7 +223,7 @@ class todo extends Component {
                                 <textarea name="" id="missionText" cols="30" rows="10"></textarea>
                         </div>
                         <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt=""/>
-                        <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened === false ? '' : 'newMissionWindowOpen'} alt=""/>
+                        <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened === false ? 'addNewMissionWindowBtn ' : 'addNewMissionWindowOpen addNewMissionWindowBtnOpen'} alt=""/>
                             
                           
                         </div>

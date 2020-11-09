@@ -240,7 +240,11 @@ video{
     visibility: visible;
 }
 
-.newMissionWindowOpen{
+.addNewMissionWindowBtn{
+    transition: .2s ease-in-out;
+}
+
+.addNewMissionWindowBtnOpen{
     transition: .2s ease-in-out;
     transform: rotate(45deg);
 }

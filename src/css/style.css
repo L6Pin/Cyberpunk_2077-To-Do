@@ -224,7 +224,11 @@ video {
   visibility: visible;
 }
 
-.footer .newMissionWindowOpen {
+.footer .addNewMissionWindowBtn {
+  transition: .2s ease-in-out;
+}
+
+.footer .addNewMissionWindowBtnOpen {
   transition: .2s ease-in-out;
   transform: rotate(45deg);
 }
