@@ -1,5 +1,5 @@
 import videoBg from "../img/videoBg.mp4";
-import mainButton from '../img/mainBtn.png';
+import mainBtn from '../img/mainBtn.png';
 import logo from '../img/logo.png'
 import addBtn from '../img/addBtn.png'
 import React, { Component } from 'react';
@@ -142,8 +142,10 @@ class todo extends Component {
 
         let addNewMission = () => {
 
+         
+
             let mission = {
-                title: document.querySelector('#missionTitle').value,
+                title: document.querySelector('#missionTitle').value.toUpperCase(),
                 text: document.querySelector('#missionText').value,
                 isDone: false
             }
@@ -215,14 +217,15 @@ class todo extends Component {
                         </div>
 
                         {/* ----- FOOTER -----*/}
-                        <div className="footer">
+                        <div className={this.state.newMissionOpened === false ? 'footer' : 'footer footerMissionOpen'}>
                         <div className={this.state.newMissionOpened === false ? "newMissionWindowClosed newMissionWindow": "newMissionWindow"}>
                                 <input type="text" name="" id="missionTitle"/>
                                 <textarea name="" id="missionText" cols="30" rows="10"></textarea>
                         </div>
-
-                            <p onClick={NewMissionWindow}>Open</p>
-                            <p onClick={addNewMission}>Add</p>
+                        <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt=""/>
+                        <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened === false ? '' : 'newMissionWindowOpen'} alt=""/>
+                            
+                          
                         </div>
 
                     </div>

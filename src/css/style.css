@@ -68,7 +68,6 @@ video {
 
 .mainInactive {
   filter: blur(2px);
-  overflow-y: hidden;
 }
 
 .main {
@@ -121,10 +120,17 @@ video {
 }
 
 .footer {
-  background: orange;
   position: relative;
   z-index: 5;
   flex: .7;
+  background: orange;
+  padding: 1rem;
+  border-bottom-right-radius: 40px;
+  border: #5FACBC 3px solid;
+  border-top: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .footer .newMissionWindow {
@@ -207,8 +213,29 @@ video {
   }
 }
 
+.footer .addNewMissionBtnClosed {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.footer .addNewMissionBtn {
+  transition: .4s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer .newMissionWindowOpen {
+  transition: .2s ease-in-out;
+  transform: rotate(45deg);
+}
+
 .footer .newMissionWindowClosed {
   transform: translateX(-170%);
+}
+
+.footerMissionOpen {
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 @keyframes newMission {
