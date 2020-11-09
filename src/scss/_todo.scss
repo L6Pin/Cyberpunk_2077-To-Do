@@ -76,7 +76,10 @@ video{
 
 }
 
-
+.mainInactive{
+       filter: blur(2px);
+       overflow-y: hidden;
+}
 
 
 .main{
@@ -90,6 +93,7 @@ video{
     border-right: $blue 3px solid;
     color: $red;
     padding: 2rem  1.5rem 1.5rem 1.5rem;
+ 
 
  
    
@@ -107,10 +111,6 @@ video{
             &::before{
                 content: '';
                 position: absolute;
-                // width: 106.91%;
-                // height: 20%;
-                // top: -19%;
-                // left: -1%;
                 width: 108.5%;
                 height: 14px;
                 top: -14px;
@@ -146,18 +146,85 @@ video{
 
     & .newMissionWindow{
         position: absolute;
-        width: 100%;
-        height: 5rem;
-        background-color: rebeccapurple;
+        width: 85%;
+        height: 13rem;
+        padding: 1rem;
+        background-color: rgba($color: #202020, $alpha: .9);
         bottom: 100%;
-        left: 0%;
+        left: 50%;
         z-index: 3 ;
         transition: .3s ease-in-out;
-       
+       border: 2px solid $blue;
+       transform: translateX(-50%);
+       border-top-right-radius: 35px;
+
+
+       & input{
+        background: none;
+        border: none;
+        width: 100%;
+        margin-bottom: 1rem;
+        position: relative;
+        border-bottom: 1px solid $blue;
+        color: $yellow;
+        text-shadow: 0px 0px 8px #F3CD5A;
+
+
+        &:focus{
+            outline: none;
+         }
+     }
+
+     & textarea{
+         
+      width: 100%;
+      background: url('../img/Pattern.png') rgba($color: #202020, $alpha: .9);
+      overflow-y: auto;
+      border-style: none; 
+      border-color: Transparent; 
+      height: 80%;
+      padding: .6rem;
+      margin-bottom: .5rem;
+      border: 2px solid $blue;
+      box-shadow: 0px 0px 4px $blue;
+      color: $red;
+      text-shadow: 0px 0px 8px #FF3422;
+      font-family: 'Abel', sans-serif;
+
+       &:focus{
+            outline: none;
+        }
+    }
+
+
+       &::before{
+        content: '';
+        position: absolute;
+        width: 21%;
+        height: 100%;
+        top: -10%;
+        left: -4.5%;
+        background: url(../img/topNewMissionBorder.png) repeat-x 100% 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @media (min-width: 360px){
+            top: -6%; 
+        }
+
+        @media (min-width: 375px){
+            top: -7.5%; 
+        }
+
+        @media (min-width: 411px){
+            top: -8%; 
+        }
+    }
+
     }
 
     & .newMissionWindowClosed{
-        transform: translateX(-100%);
+        transform: translateX(-170%);
     }
 }
 

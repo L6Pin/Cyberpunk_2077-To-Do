@@ -195,7 +195,7 @@ class todo extends Component {
 
                         {/* ------ CARDS SECTION ------ */}
                       
-                        <div className="main">
+                        <div className={this.state.newMissionOpened === false ? 'main' : 'main mainInactive'}>
 
               
                         
@@ -218,7 +218,7 @@ class todo extends Component {
                         <div className="footer">
                         <div className={this.state.newMissionOpened === false ? "newMissionWindowClosed newMissionWindow": "newMissionWindow"}>
                                 <input type="text" name="" id="missionTitle"/>
-                                <input type="text" name="" id="missionText"/>
+                                <textarea name="" id="missionText" cols="30" rows="10"></textarea>
                         </div>
 
                             <p onClick={NewMissionWindow}>Open</p>
