@@ -136,9 +136,14 @@ class todo extends Component {
 
             let totalCompletedMissions = 0;
 
-      
+            for (let i = 0; i < this.state.missions.length; i++){
+                if (this.state.missions[i].isDone === false){
+                    totalCompletedMissions++
+                }
+            }
 
-            return totalCompletedMissions;
+         return totalCompletedMissions
+
         }
 
         let NewMissionWindow = () => {
