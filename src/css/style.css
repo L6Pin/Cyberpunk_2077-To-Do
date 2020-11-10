@@ -67,10 +67,6 @@ video {
   text-shadow: 0px 0px 8px #FF3422;
 }
 
-.mainInactive {
-  filter: blur(2px);
-}
-
 .main {
   position: relative;
   flex: 7;
@@ -91,7 +87,7 @@ video {
   position: relative;
   animation: .5s newMission forwards;
   transform: translateY(-50%);
-  opacity: 0;
+  transition: .6s ease-in-out all;
 }
 
 .main .mission::before {
@@ -133,6 +129,11 @@ video {
   justify-content: space-between;
 }
 
+.main .mission__edit_icons span {
+  font-size: .8rem;
+  margin-right: .5rem;
+}
+
 .main .mission__status span:first-of-type {
   color: #5FACBC;
   text-shadow: 0px 0px 8px #5FACBC;
@@ -148,8 +149,63 @@ video {
   text-shadow: 0px 0px 8px #FF3422;
 }
 
+.main .missionCompleted {
+  border: rgba(95, 172, 188, 0.3) 3px solid;
+  border-top: none;
+}
+
+.main .missionCompleted::before {
+  content: '';
+  position: absolute;
+  width: 108.5%;
+  height: 14px;
+  top: -14px;
+  left: -3px;
+  background: url(../img/topMissionBorder.png) repeat-x 100% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.main .missionCompleted .mission__title {
+  color: #FCEE0A;
+  text-shadow: 0px 0px 0px #FCEE0A;
+  opacity: .3;
+}
+
+.main .missionCompleted .mission__text {
+  color: #FF3422;
+  text-shadow: 0px 0px 0px #FF3422;
+  opacity: .3;
+}
+
+.main .missionCompleted .mission__edit_icons {
+  opacity: .3;
+}
+
+.main .missionCompleted .mission__status span:first-of-type {
+  color: #5FACBC;
+  text-shadow: 0px 0px 0px #5FACBC;
+  opacity: .3;
+}
+
+.main .missionCompleted .mission__status .statusCompleted {
+  color: #00CA45;
+  text-shadow: 0px 0px 8px #00CA45;
+}
+
+.main .missionCompleted .mission__status .statusNotCompleted {
+  color: #FF3422;
+  text-shadow: 0px 0px 0px #FF3422;
+  opacity: .3;
+}
+
 .mainNoScroll {
   overflow-y: hidden;
+}
+
+.mainInactive {
+  filter: blur(2px);
 }
 
 .footer {

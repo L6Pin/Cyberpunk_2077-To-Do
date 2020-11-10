@@ -31,7 +31,7 @@ video{
 
 
 
-
+// ------ HEADER -----
 
 .header{
     
@@ -74,10 +74,8 @@ video{
 
 }
 
-.mainInactive{
-       filter: blur(2px);
-}
 
+// ------ MAIN ------
 
 .main{
     position: relative;
@@ -88,9 +86,7 @@ video{
     border-right: $blue 3px solid;
     color: $red;
     padding: 2rem  1.5rem 1.5rem 1.5rem;
- 
-
- 
+    
    
     & .mission{
         width: 100%;
@@ -101,7 +97,8 @@ video{
         position: relative;
         animation: .5s newMission forwards;
         transform: translateY(-50%);
-        opacity: 0;
+        transition: .6s ease-in-out all;
+
         
             &::before{
                 content: '';
@@ -141,6 +138,13 @@ video{
             justify-content: space-between;
         }
 
+        &__edit_icons{
+            & span{
+                font-size: .8rem;
+                margin-right: .5rem;
+            }
+        }
+
         &__status{
             & span:first-of-type{
                 color: $blue;
@@ -159,13 +163,74 @@ video{
 
         }
     }
+
+    & .missionCompleted{
+        border: rgba($color: $blue, $alpha: .3) 3px solid;
+        border-top: none;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 108.5%;
+            height: 14px;
+            top: -14px;
+            left: -3px;
+            background: url(../img/topMissionBorder.png) repeat-x 100% 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+        }
+    
+        .mission__title{
+            color: $yellow;
+            text-shadow: 0px 0px 0px $yellow;
+            opacity: .3;
+        }
+    
+        .mission__text{
+            color: $red;
+            text-shadow: 0px 0px 0px $red;
+            opacity: .3;
+        }
+    
+        .mission__edit_icons{
+            opacity: .3;
+        }
+        
+        .mission__status{
+            & span:first-of-type{
+                color: $blue;
+                text-shadow: 0px 0px 0px $blue;
+                opacity: .3;
+            }
+    
+            & .statusCompleted{
+                color: $green;
+                text-shadow: 0px 0px 8px $green;
+            }
+    
+            & .statusNotCompleted{
+                color: $red;
+                text-shadow: 0px 0px 0px $red;
+                opacity: .3;
+            }
+    
+        }
+    }
+    
 }
 
 .mainNoScroll{
     overflow-y: hidden ;
 }
 
+.mainInactive{
+    filter: blur(2px);
+}
 
+
+
+// ------ FOOTER -----
 
 .footer{
     // background: orange;
@@ -292,6 +357,8 @@ video{
 }
 
 
+// ----- ANIMATONS -----
+
 @keyframes newMission{
     0%{
         transform: translateY(-50%);
@@ -303,3 +370,4 @@ video{
         opacity: 1;
     }
 }
+
