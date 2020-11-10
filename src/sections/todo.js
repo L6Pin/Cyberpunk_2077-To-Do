@@ -151,11 +151,7 @@ class todo extends Component {
                 mId:randNum
             }
             
-            console.log(mission.mId)
-
             this.state.missions.push(mission)
-
-            localStorage.setItem("key", "value");
   
             document.querySelector('#missionTitle').value = ''
             document.querySelector('#missionText').value = ''     
@@ -176,13 +172,16 @@ class todo extends Component {
                     missionPosition = i 
                 }
             }
+            console.log(missionPosition)
 
-           console.log(missionPosition)
-
-           console.log(this.state.missions.length)
-
-           this.state.missions.splice(missionPosition, 1)
-            
+            let newArray = this.state.missions
+            console.log(newArray)
+            newArray.splice(missionPosition,1)
+            console.log(newArray)
+            this.setState({
+                mission: newArray
+            })
+            localStorage.setItem('msn', JSON.stringify(this.state.missions))
         }
 
         return ( 
