@@ -135,20 +135,23 @@ class todo extends Component {
 
 
 
-
         let NewMissionWindow = () => {
             this.setState({newMissionOpened: !this.state.newMissionOpened})
         }
 
         let addNewMission = () => {
 
-         
+            let randNum = Math.random()
+            console.log(randNum)
 
             let mission = {
                 title: document.querySelector('#missionTitle').value.toUpperCase(),
                 text: document.querySelector('#missionText').value,
-                isDone: false
+                isDone: false,
+                mId:randNum
             }
+            
+            console.log(mission.mId)
 
             this.state.missions.push(mission)
 
@@ -162,9 +165,25 @@ class todo extends Component {
             })
             
             localStorage.setItem('msn', JSON.stringify(this.state.missions))
-            
         }
 
+        let deleteMission = (e) => {
+
+            let missionPosition
+            
+            for (let i = 0; i < this.state.missions.length; i++){
+                if (this.state.missions[i].mId.toString() === e.target.parentElement.parentElement.parentElement.id.toString()){
+                    missionPosition = i 
+                }
+            }
+
+           console.log(missionPosition)
+
+           console.log(this.state.missions.length)
+
+           this.state.missions.splice(missionPosition, 1)
+            
+        }
 
         return ( 
             
@@ -203,12 +222,15 @@ class todo extends Component {
                         
                         {
                             this.state.missions.map(item => (
-                                <div className="mission">
+                                <div className="mission" id={item.mId}>
                                 <p className="mission__title" id="mTitle">{item.title}</p>
                                 <p className="mission__text" id="mText">{item.text}</p>
                                 <div className="mission__edit">
-                                    <div className="mission__edit_icons"> 1 2</div>
-                                    <div className="mission__status"> 3</div>
+                                    <div className="mission__edit_icons">
+                                        <p>EDIT</p>
+                                        <p onClick={deleteMission}>DELETE</p>
+                                    </div>
+                                    <div className="mission__status"><span className="status">Status:</span> <span className={item.isDone ? 'statusCompleted' : 'statusNotCompleted'}>{item.isDone ? 'Completed' : 'Ongoing'}</span></div>
                                 </div>
                                 </div> 
                                 )

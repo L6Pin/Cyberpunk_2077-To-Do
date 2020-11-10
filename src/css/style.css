@@ -16,14 +16,9 @@
 video {
   position: absolute;
   top: 0;
-  right: -75%;
+  right: 50%;
   height: 100%;
-}
-
-@media (min-height: 480px) {
-  video {
-    right: -135%;
-  }
+  transform: translateX(50%);
 }
 
 .toDo {
@@ -119,6 +114,38 @@ video {
 
 .main .mission p {
   word-wrap: break-word;
+}
+
+.main .mission__title {
+  font-size: 1.15rem;
+  color: #FCEE0A;
+  text-shadow: 0px 0px 8px #FCEE0A;
+}
+
+.main .mission__text {
+  color: #FF3422;
+  text-shadow: 0px 0px 8px #FF3422;
+}
+
+.main .mission__edit {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .mission__status span:first-of-type {
+  color: #5FACBC;
+  text-shadow: 0px 0px 8px #5FACBC;
+}
+
+.main .mission__status .statusCompleted {
+  color: #00CA45;
+  text-shadow: 0px 0px 8px #00CA45;
+}
+
+.main .mission__status .statusNotCompleted {
+  color: #FF3422;
+  text-shadow: 0px 0px 8px #FF3422;
 }
 
 .mainNoScroll {
