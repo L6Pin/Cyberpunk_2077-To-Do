@@ -9,6 +9,7 @@ class todo extends Component {
         super()
         this.state = {
             newMissionOpened: false,
+            editMissionOpened: false,
             missions: []
         }
     }
@@ -150,16 +151,32 @@ class todo extends Component {
             this.setState({ newMissionOpened: !this.state.newMissionOpened })
         }
 
+        let addTextToEdit = (e) => {
+            NewMissionWindow()
+            let missionProperties = e.target.parentElement.parentElement.parentElement.childNodes;
+            let missionTitle = missionProperties[0].innerHTML
+            let missionText = missionProperties[1].innerHTML
+
+            document.querySelector('#missionTitle').value = missionTitle;
+            document.querySelector('#missionText').innerHTML = missionText;
+        }
+
+        // let editMissionOpened = () => {
+        //     this.setState({editMissionOpened: !this.state.editMissionOpened })
+        //     console.log(this.state.editMissionOpened)
+        // }
+
         let addNewMission = () => {
 
             let randNum = Math.random()
             console.log(randNum)
 
             let mission = {
-                title: document.querySelector('#missionTitle').value.toUpperCase(),
+                title: document.querySelector('#missionTitle').value,
                 text: document.querySelector('#missionText').value,
                 isDone: false,
-                mId: randNum
+                mId: randNum,
+
             }
 
             this.state.missions.push(mission)
@@ -265,7 +282,7 @@ class todo extends Component {
                                     <p className="mission__text" id="mText">{item.text}</p>
                                     <div className="mission__edit">
                                         <div className="mission__edit_icons">
-                                            <span>EDIT</span>
+                                            <span onClick={addTextToEdit}>EDIT</span>
                                             <span onClick={deleteMission}>DELETE</span>
                                             <span onClick={completeMission} >COMPLETE</span>
                                         </div>
@@ -279,10 +296,14 @@ class todo extends Component {
 
                     {/* ----- FOOTER -----*/}
                     <div className={this.state.newMissionOpened === false ? 'footer' : 'footer footerMissionOpen'}>
+
                         <div className={this.state.newMissionOpened === false ? "newMissionWindowClosed newMissionWindow" : "newMissionWindow"}>
                             <input type="text" name="" id="missionTitle" />
                             <textarea name="" id="missionText" cols="30" rows="10"></textarea>
                         </div>
+
+   
+
                         <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt="" />
                         <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened === false ? 'addNewMissionWindowBtn ' : 'addNewMissionWindowOpen addNewMissionWindowBtnOpen'} alt="" />
 
