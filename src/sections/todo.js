@@ -1,8 +1,10 @@
 import videoBg from "../img/videoBg.mp4";
 import mainBtn from '../img/mainBtn.png';
-import logo from '../img/logo.png'
-import addBtn from '../img/addBtn.png'
+import logo from '../img/logo.png';
+import addBtn from '../img/addBtn.png';
+import editBtn from '../img/editBtn.png';
 import React, { Component } from 'react';
+
 
 class todo extends Component {
     constructor() {
@@ -151,22 +153,42 @@ class todo extends Component {
             this.setState({ newMissionOpened: !this.state.newMissionOpened })
         }
 
-        let addTextToEdit = (e) => {
-            NewMissionWindow()
+        let editMissionOpened = () => {
+            this.setState({editMissionOpened: !this.state.editMissionOpened })
+            console.log(this.state.editMissionOpened)
+        }
+
+        let openEditWindow = (e) => {
+            editMissionOpened()
             let missionProperties = e.target.parentElement.parentElement.parentElement.childNodes;
             let missionTitle = missionProperties[0].innerHTML
             let missionText = missionProperties[1].innerHTML
 
-            document.querySelector('#missionTitle').value = missionTitle;
-            document.querySelector('#missionText').innerHTML = missionText;
+            document.querySelector('#missionTitleEdit').value = missionTitle;
+            document.querySelector('#missionTextEdit').innerHTML = missionText;
+
+            let missionPosition = 0;
+           for (let i = 0; i < this.state.missions.length; i++) {
+            if (this.state.missions[i].mId.toString() === e.target.parentElement.parentElement.parentElement.id.toString()) {
+                missionPosition = i
+            }
         }
 
-        // let editMissionOpened = () => {
-        //     this.setState({editMissionOpened: !this.state.editMissionOpened })
-        //     console.log(this.state.editMissionOpened)
-        // }
+        localStorage.setItem('missionIndexEdit', missionPosition)
+        localStorage.setItem('missionTitleEdit', missionTitle)
+        localStorage.setItem('missionTextEdit', missionText)
 
+        console.log(localStorage.getItem('missionIndexEdit'))
+        console.log(localStorage.getItem('missionTitleEdit'))
+        console.log(localStorage.getItem('missionTextEdit'))
+        
+        }
+
+        let changeToEditedText
+
+    
         let addNewMission = () => {
+            
 
             let randNum = Math.random()
             console.log(randNum)
@@ -182,7 +204,7 @@ class todo extends Component {
             this.state.missions.push(mission)
 
             document.querySelector('#missionTitle').value = ''
-            document.querySelector('#missionText').value = ''
+            document.querySelector('#missionText').innerHTML = ''
 
             this.setState({
                 newMissionOpened: false
@@ -282,7 +304,7 @@ class todo extends Component {
                                     <p className="mission__text" id="mText">{item.text}</p>
                                     <div className="mission__edit">
                                         <div className="mission__edit_icons">
-                                            <span onClick={addTextToEdit}>EDIT</span>
+                                            <span onClick={openEditWindow}>EDIT</span>
                                             <span onClick={deleteMission}>DELETE</span>
                                             <span onClick={completeMission} >COMPLETE</span>
                                         </div>
@@ -302,9 +324,14 @@ class todo extends Component {
                             <textarea name="" id="missionText" cols="30" rows="10"></textarea>
                         </div>
 
+                        <div className={this.state.editMissionOpened === false ? "newMissionWindowClosed newMissionWindow" : "newMissionWindow"}>
+                            <input type="text" name="" id="missionTitleEdit" />
+                            <textarea name="" id="missionTextEdit" cols="30" rows="10"></textarea>
+                        </div>
    
 
-                        <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt="" />
+                        {/* <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt="" /> */}
+                        {/* <img src={editBtn} onClick={addTextToEdit} className="editBtn" alt="" /> */}
                         <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened === false ? 'addNewMissionWindowBtn ' : 'addNewMissionWindowOpen addNewMissionWindowBtnOpen'} alt="" />
 
 
