@@ -165,26 +165,52 @@ class todo extends Component {
             let missionText = missionProperties[1].innerHTML
 
             document.querySelector('#missionTitleEdit').value = missionTitle;
-            document.querySelector('#missionTextEdit').innerHTML = missionText;
+            document.querySelector('#missionTextEdit').value = missionText;
 
-            let missionPosition = 0;
-           for (let i = 0; i < this.state.missions.length; i++) {
-            if (this.state.missions[i].mId.toString() === e.target.parentElement.parentElement.parentElement.id.toString()) {
-                missionPosition = i
-            }
-        }
+            
 
-        localStorage.setItem('missionIndexEdit', missionPosition)
-        localStorage.setItem('missionTitleEdit', missionTitle)
-        localStorage.setItem('missionTextEdit', missionText)
 
+        localStorage.setItem('missionIndexEdit', e.target.parentElement.parentElement.parentElement.id.toString())
         console.log(localStorage.getItem('missionIndexEdit'))
-        console.log(localStorage.getItem('missionTitleEdit'))
-        console.log(localStorage.getItem('missionTextEdit'))
+
         
         }
 
-        let changeToEditedText
+        let changeToEditedText = () => {
+                let newMissionTitle = document.querySelector('#missionTitleEdit').value;
+                let newMissionText = document.querySelector('#missionTextEdit').value;
+
+                // console.log(newMissionTitle)
+                // console.log(newMissionText)
+
+                // console.log(this.state.missions[localStorage.getItem('missionIndexEdit')].title)
+                // console.log(this.state.missions[localStorage.getItem('missionIndexEdit')].text)
+
+                let tempArray = this.state.missions
+
+
+                console.log(tempArray)
+
+                for (let i = 0; i < tempArray.length; i++) {
+                    if (tempArray[i].mId.toString() === localStorage.getItem('missionIndexEdit')){
+                        tempArray[i].title = newMissionTitle
+                        tempArray[i].text = newMissionText
+                    }
+                }
+
+                console.log(tempArray)
+                
+                this.setState({
+                    mission: tempArray
+                })
+
+                localStorage.setItem('msn', JSON.stringify(this.state.missions))
+              
+                this.setState({
+                    editMissionOpened: false
+                })
+              
+        }
 
     
         let addNewMission = () => {
@@ -331,7 +357,7 @@ class todo extends Component {
    
 
                         {/* <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt="" /> */}
-                        {/* <img src={editBtn} onClick={addTextToEdit} className="editBtn" alt="" /> */}
+                        <img src={editBtn} onClick={changeToEditedText} className="editBtn" alt="" />
                         <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened === false ? 'addNewMissionWindowBtn ' : 'addNewMissionWindowOpen addNewMissionWindowBtnOpen'} alt="" />
 
 
