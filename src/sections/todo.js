@@ -230,7 +230,7 @@ class todo extends Component {
             this.state.missions.push(mission)
 
             document.querySelector('#missionTitle').value = ''
-            document.querySelector('#missionText').innerHTML = ''
+            document.querySelector('#missionText').value = ''
 
             this.setState({
                 newMissionOpened: false
@@ -356,7 +356,7 @@ class todo extends Component {
                         </div>
    
 
-                        {/* <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt="" /> */}
+                        <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt="" />
                         <img src={editBtn} onClick={changeToEditedText} className="editBtn" alt="" />
                         <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened === false ? 'addNewMissionWindowBtn ' : 'addNewMissionWindowOpen addNewMissionWindowBtnOpen'} alt="" />
 
