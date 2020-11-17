@@ -327,12 +327,10 @@ video{
 }
 
 .addNewMissionBtnClosed{
-    opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 
 .addNewMissionBtn{
-    transition: .4s ease-in-out;
     opacity: 1;
     visibility: visible;
 }
@@ -382,3 +380,6 @@ video{
 }
 
 
+.hide{
+    display: none;
+}

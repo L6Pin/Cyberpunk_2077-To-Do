@@ -303,12 +303,10 @@ video {
 }
 
 .footer .addNewMissionBtnClosed {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 
 .footer .addNewMissionBtn {
-  transition: .4s ease-in-out;
   opacity: 1;
   visibility: visible;
 }
@@ -348,5 +346,9 @@ video {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
