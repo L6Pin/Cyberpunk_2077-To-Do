@@ -356,9 +356,9 @@ class todo extends Component {
                         </div>
    
 
-                        <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened === false ? 'addNewMissionBtnClosed' : 'addNewMissionBtn'} alt="" />
-                        <img src={editBtn} onClick={changeToEditedText} className="editBtn" alt="" />
-                        <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened === false ? 'addNewMissionWindowBtn ' : 'addNewMissionWindowOpen addNewMissionWindowBtnOpen'} alt="" />
+                        <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened ? ' addNewMissionBtn' : 'addNewMissionBtnClosed'} alt="" />
+                        <img src={editBtn} onClick={changeToEditedText} className={this.state.editMissionOpened ? 'editBtn' : 'editBtnHidden'} alt="" />
+                        <img src={mainBtn} onClick={NewMissionWindow} className={this.state.newMissionOpened  ? 'addNewMissionWindowOpen addNewMissionWindowBtnOpen ' : 'addNewMissionWindowBtn'} alt="" /> 
 
 
                     </div>

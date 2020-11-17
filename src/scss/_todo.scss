@@ -350,6 +350,15 @@ video{
     & .newMissionWindowClosed{
         transform: translateX(-170%);
     }
+
+.editBtn{
+    width: 15%; 
+}
+
+.editBtnHidden{
+    display: none;
+}
+    
 }
 
 .footerMissionOpen{
@@ -372,6 +381,4 @@ video{
     }
 }
 
-.editBtn{
-    width: 15%;
-}
+

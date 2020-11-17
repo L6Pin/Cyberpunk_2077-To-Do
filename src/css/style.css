@@ -326,6 +326,14 @@ video {
   transform: translateX(-170%);
 }
 
+.footer .editBtn {
+  width: 15%;
+}
+
+.footer .editBtnHidden {
+  display: none;
+}
+
 .footerMissionOpen {
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -340,9 +348,5 @@ video {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-.editBtn {
-  width: 15%;
 }
 /*# sourceMappingURL=style.css.map */
