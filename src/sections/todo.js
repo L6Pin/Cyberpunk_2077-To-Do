@@ -223,16 +223,20 @@ class todo extends Component {
 
             }
 
-            this.state.missions.push(mission)
-
-            document.querySelector('#missionTitle').value = ''
-            document.querySelector('#missionText').value = ''
-
-            this.setState({
-                newMissionOpened: false
-            })
-
-            localStorage.setItem('msn', JSON.stringify(this.state.missions))
+            if(document.querySelector('#missionTitle').value === '' || document.querySelector('#missionText').value === ''){
+                alert('Please fill in both fields')
+            }
+            else{
+                this.state.missions.push(mission)
+                document.querySelector('#missionTitle').value = ''
+                document.querySelector('#missionText').value = ''
+    
+                this.setState({
+                    newMissionOpened: false
+                })
+    
+                localStorage.setItem('msn', JSON.stringify(this.state.missions))
+            }
         }
 
         let deleteMission = (e) => {
