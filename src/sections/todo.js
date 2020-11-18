@@ -313,7 +313,7 @@ class todo extends Component {
 
 
                     {/* ----- HEADER -----*/}
-                    <div className={this.state.newMissionOpened === false ? 'header' : 'header mainInactive'}>
+                    <div className={this.state.newMissionOpened || this.state.editMissionOpened ? 'header mainInactive' : 'header '}>
                         <img src={logo} alt="" />
                         <div className="header__border">
                             <p className="header__title">TASK TRACKER</p>
