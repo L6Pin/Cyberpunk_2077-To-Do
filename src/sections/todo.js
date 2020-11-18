@@ -3,6 +3,9 @@ import mainBtn from '../img/mainBtn.png';
 import logo from '../img/logo.png';
 import addBtn from '../img/addBtn.png';
 import editBtn from '../img/editBtn.png';
+import completeBtnField from '../img/completeBtnField.png';
+import deleteBtnField from '../img/deleteBtnField.png'
+import editBtnField from '../img/editBtnField.png'
 import React, { Component } from 'react';
 
 
@@ -160,26 +163,23 @@ class todo extends Component {
         }
 
         let openEditWindow = (e) => {
-            editMissionOpened()
+            // editMissionOpened()
+
+            console.log(e)
+
             let missionProperties = e.target.parentElement.parentElement.parentElement.childNodes;
+
             let missionTitle = missionProperties[0].innerHTML
             let missionText = missionProperties[1].innerHTML
 
             document.querySelector('#missionTitleEdit').value = missionTitle;
             document.querySelector('#missionTextEdit').value = missionText;
 
-
             this.setState({
                 editMissionOpened: !this.state.editMissionOpened
             })
 
-
-
             localStorage.setItem('missionIndexEdit', e.target.parentElement.parentElement.parentElement.id.toString())
-
-
-
-
 
         }
 
@@ -333,9 +333,9 @@ class todo extends Component {
                                     <p className="mission__text" id="mText">{item.text}</p>
                                     <div className="mission__edit">
                                         <div className="mission__edit_icons">
-                                            <span onClick={openEditWindow}>EDIT</span>
-                                            <span onClick={deleteMission}>DELETE</span>
-                                            <span onClick={completeMission} >COMPLETE</span>
+                                            <img src={deleteBtnField} alt="" onClick={deleteMission}/>
+                                            <img src={editBtnField} alt=""  onClick={openEditWindow}/>
+                                            <img src={completeBtnField} alt="" onClick={completeMission} />
                                         </div>
                                         <div className="mission__status"><span className="status">Status:</span> <span className={item.isDone ? 'statusCompleted' : 'statusNotCompleted'}>{item.isDone ? 'Completed' : 'Ongoing'}</span></div>
                                     </div>
@@ -347,8 +347,6 @@ class todo extends Component {
 
                     {/* ----- FOOTER -----*/}
                     <div className={this.state.newMissionOpened || this.state.editMissionOpened ? 'footer footerMissionOpen' : 'footer'} >
-
-                        {console.log("FOOTER: " + this.state.newMissionOpened || this.state.newMissionOpened)}
 
                         <div className={this.state.newMissionOpened === false ? "newMissionWindowClosed newMissionWindow" : "newMissionWindow"}>
                             <input type="text" name="" id="missionTitle" placeholder="Enter Mission Title" />

@@ -140,9 +140,15 @@ video{
         }
 
         &__edit_icons{
-            & span{
-                font-size: .8rem;
-                margin-right: .5rem;
+
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 50%;
+
+            & img{
+                width: 1.5rem;
+                margin-right: 5%;
             }
         }
 
