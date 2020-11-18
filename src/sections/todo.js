@@ -6,6 +6,7 @@ import editBtn from '../img/editBtn.png';
 import completeBtnField from '../img/completeBtnField.png';
 import deleteBtnField from '../img/deleteBtnField.png'
 import editBtnField from '../img/editBtnField.png'
+import activeMissions from '../img/activeMissions.png'
 import React, { Component } from 'react';
 
 
@@ -318,7 +319,12 @@ class todo extends Component {
                             <div className="header__tdContainer">
                                 <p className="date"></p> <p className="city">Nigh City</p>
                             </div>
-                            <div className="missionNumber">{countCompletedMissions()}</div>
+                            
+                              <div className="header__counterContainer">
+                                 <img src={activeMissions} alt="" />
+                                <span className="missionNumber">{countCompletedMissions()}</span>
+                              </div>
+                          
                         </div>
                     </div>
 
@@ -333,8 +339,8 @@ class todo extends Component {
                                     <p className="mission__text" id="mText">{item.text}</p>
                                     <div className="mission__edit">
                                         <div className="mission__edit_icons">
-                                            <img src={deleteBtnField} alt="" onClick={deleteMission}/>
-                                            <img src={editBtnField} alt=""  onClick={openEditWindow}/>
+                                            <img src={deleteBtnField} alt="" onClick={deleteMission} />
+                                            <img src={editBtnField} alt="" onClick={openEditWindow} />
                                             <img src={completeBtnField} alt="" onClick={completeMission} />
                                         </div>
                                         <div className="mission__status"><span className="status">Status:</span> <span className={item.isDone ? 'statusCompleted' : 'statusNotCompleted'}>{item.isDone ? 'Completed' : 'Ongoing'}</span></div>

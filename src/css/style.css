@@ -67,6 +67,24 @@ video {
   text-shadow: 0px 0px 8px #FF3422;
 }
 
+.header__counterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.header__counterContainer img {
+  display: block;
+  width: 2rem;
+  padding-right: .5rem;
+  margin: initial;
+  transform: translateY(0px);
+}
+
+.header__counterContainer span {
+  color: #FCEE0A;
+  text-shadow: 0px 0px 8px #FCEE0A;
+}
+
 .main {
   position: relative;
   flex: 7;
@@ -320,11 +338,12 @@ video {
 
 .footer .addNewMissionWindowBtn {
   transition: .2s ease-in-out;
+  height: 100%;
 }
 
 .footer .addNewMissionWindowBtnOpen {
-  transition: .2s ease-in-out;
   transform: rotate(45deg);
+  height: 100%;
 }
 
 .footer .newMissionWindowClosed {
