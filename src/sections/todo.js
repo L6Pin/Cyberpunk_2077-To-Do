@@ -169,15 +169,15 @@ class todo extends Component {
             document.querySelector('#missionTextEdit').value = missionText;
 
 
-                this.setState({
-                    editMissionOpened: !this.state.editMissionOpened
-                })
+            this.setState({
+                editMissionOpened: !this.state.editMissionOpened
+            })
 
-             
+
 
             localStorage.setItem('missionIndexEdit', e.target.parentElement.parentElement.parentElement.id.toString())
-           
-        
+
+
 
 
 
@@ -206,7 +206,7 @@ class todo extends Component {
                 editMissionOpened: !this.state.editMissionOpened
             })
 
-          
+
         }
 
         let addNewMission = () => {
@@ -281,14 +281,14 @@ class todo extends Component {
         }
 
         let hideAddBtn = () => {
-            if (this.state.editMissionOpened){
+            if (this.state.editMissionOpened) {
                 return "hide"
             }
-            else{
-                if (this.state.newMissionOpened){
+            else {
+                if (this.state.newMissionOpened) {
                     return "addNewMissionWindowOpen addNewMissionWindowBtnOpen"
                 }
-                else{
+                else {
                     return "addNewMissionWindowBtn"
                 }
             }
@@ -346,23 +346,23 @@ class todo extends Component {
                     </div>
 
                     {/* ----- FOOTER -----*/}
-                    <div className={this.state.newMissionOpened ||  this.state.editMissionOpened  ? 'footer footerMissionOpen' : 'footer'} >
-                        
+                    <div className={this.state.newMissionOpened || this.state.editMissionOpened ? 'footer footerMissionOpen' : 'footer'} >
+
                         {console.log("FOOTER: " + this.state.newMissionOpened || this.state.newMissionOpened)}
 
                         <div className={this.state.newMissionOpened === false ? "newMissionWindowClosed newMissionWindow" : "newMissionWindow"}>
-                            <input type="text" name="" id="missionTitle" />
-                            <textarea name="" id="missionText" cols="30" rows="10"></textarea>
+                            <input type="text" name="" id="missionTitle" placeholder="Enter Mission Title" />
+                            <textarea name="" id="missionText" cols="30" rows="10" placeholder="Enter Mission Description" ></textarea>
                         </div>
-                        
+
                         <div className={this.state.editMissionOpened === false ? "newMissionWindowClosed newMissionWindow" : "newMissionWindow"}>
                             <input type="text" name="" id="missionTitleEdit" />
-                            <textarea name="" id="missionTextEdit" cols="30" rows="10"></textarea>
+                            <textarea name="" id="missionTextEdit" cols="30" rows="10" ></textarea>
                         </div>
                         <img src={addBtn} onClick={addNewMission} className={this.state.newMissionOpened ? ' addNewMissionBtn' : 'addNewMissionBtnClosed'} alt="" />
                         <img src={editBtn} onClick={changeToEditedText} className={this.state.editMissionOpened ? 'editBtn' : 'editBtnHidden'} alt="" />
                         <img src={mainBtn} onClick={NewMissionWindow} className={hideAddBtn()} alt="" />
-                        <img src={mainBtn} onClick={editMissionOpened} className={this.state.editMissionOpened ? 'addNewMissionWindowOpen addNewMissionWindowBtnOpen' : 'hide'} alt="" />
+                        <img src={mainBtn} onClick={changeToEditedText} className={this.state.editMissionOpened ? 'addNewMissionWindowOpen addNewMissionWindowBtnOpen' : 'hide'} alt="" />
                     </div>
 
                 </div>
