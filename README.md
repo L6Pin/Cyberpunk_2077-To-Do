@@ -23,5 +23,4 @@
         </li>
         <li><p><span style="font-weight: bold">ReactJS</span> - This framework was useful to more easily create sections and components of the website.</p>
     </li>
-
 </ul>
