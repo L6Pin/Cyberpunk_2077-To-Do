@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+<h1>ToDo inspired by Cyberpunk 2077</h1>
+<h2>Project Overview</h2>
+<p> This project represents a ToDo list which allows users to add, edit or delete a note they have created. In addition to that, the information about the time and date is displayed as well as how many uncompleted tasks there are.</p>
+<br/>
+<img src="./src/img/toDo_readmeImg.png">
+<h2>Design</h2>
+<p>The colors are inspired by the offical Cyberpunk 2077 promotional material colors as well as the colors and their "glow" frome the ingame HUD.</p>
+<ul>
+    <li>Red (#FF3422)</li>
+    <li>Cyan (#5FACBC)</li>
+    <li>Yellow(#FCEE0A)</li>
+    <li>Green(#00CA45)</li>
+</ul>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>The Figma design can be found <a href="https://www.figma.com/file/97dagT1qlyv2SExyzfS5ZI/Cyberpunk-2077-To-Do?node-id=0%3A1">here</a>.</p>
+<h2>Technologies</h2>
+<p>For this project the following tecnologies were used:</p>
+<ul>
+    <li><p><span style="font-weight: bold">HTML</span> - Used to create the markup of the page.</p>
+    </li>
+        <li><p><span style="font-weight: bold">SASS/CSS</span> - Sass was used in order to streamline and simplify the styling of the page.</p>
+    </li>
+        </li>
+        <li><p><span style="font-weight: bold">ReactJS</span> - This framework was useful to more easily create sections and components of the website.</p>
+    </li>
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</ul>
